@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/lib/seo";
+import { getNavLinks } from "@/lib/navigation";
 import {
   NavigationHeader,
   HeroSection,
@@ -40,14 +41,8 @@ export const metadata: Metadata = createMetadata({
   ],
 })
 
-// Navigation data
-const navLinks = [
-  { label: 'Home', href: '#' },
-  { label: 'Practice Areas', href: '#practice-areas' },
-  { label: 'About', href: '#about' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
-]
+// Navigation data (centralized)
+const navLinks = getNavLinks()
 
 // Trust indicators data
 const trustStats: StatCard[] = [
@@ -242,6 +237,7 @@ export default function Home() {
           twitter: '#',
           instagram: '#',
         }}
+        navLinks={navLinks}
       />
     </>
   )

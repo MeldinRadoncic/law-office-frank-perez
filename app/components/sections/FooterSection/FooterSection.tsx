@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import { fontSize } from '@/lib/design-tokens'
+
+interface NavLink {
+  label: string
+  href: string
+}
 
 interface FooterSectionProps {
   logo: string
@@ -8,6 +14,7 @@ interface FooterSectionProps {
   address: string
   copyright: string
   socialLinks: Record<string, string>
+  navLinks?: NavLink[]
 }
 
 export function FooterSection({
@@ -18,8 +25,12 @@ export function FooterSection({
   address,
   copyright,
   socialLinks = {},
+  navLinks = [],
 }: FooterSectionProps) {
   const currentYear = new Date().getFullYear()
+
+  // Filter out 'Contact' link to avoid redundancy with Contact section
+  const footerLinks = navLinks.filter(link => link.label !== 'Contact' && link.label !== 'Home')
 
   return (
     <footer className="w-full bg-slate-950 text-gray-300 relative overflow-hidden">
@@ -76,18 +87,15 @@ export function FooterSection({
           <div className="flex flex-col">
             <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
             <div className="space-y-3">
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                Practice Areas
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                About Attorney
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                FAQ
-              </Link>
-              <Link href="#" className="text-gray-400 hover:text-blue-400 transition-colors text-sm">
-                Contact
-              </Link>
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-gray-400 hover:text-blue-400 transition-colors ${fontSize.sm}`}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
 

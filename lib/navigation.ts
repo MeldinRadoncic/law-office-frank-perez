@@ -1,36 +1,27 @@
-export const getNavLinks = () => [
+export interface NavLink {
+  label: string
+  href: string
+}
+
+export const getNavLinks = (): NavLink[] => [
   {
     label: 'Home',
-    href: '/',
+    href: '#',
   },
   {
-    label: 'Immigration Law',
-    href: '/',
-    submenu: [
-      { label: 'Employment Visas', href: '/immigration/employment-visas' },
-      { label: 'Family Immigration', href: '/immigration/family-immigration' },
-      { label: 'Green Cards', href: '/immigration/green-cards' },
-      { label: 'Asylum Law', href: '/immigration/asylum' },
-    ]
+    label: 'Practice Areas',
+    href: '#practice-areas',
   },
   {
-    label: 'Business Law',
-    href: '/',
-    submenu: [
-      { label: 'Business Planning', href: '/business/planning' },
-      { label: 'Commercial Transactions', href: '/business/transactions' },
-      { label: 'Corporate Immigration', href: '/business/corporate' },
-    ]
+    label: 'About',
+    href: '#about',
   },
   {
-    label: 'Family Law',
-    href: '/family-law',
-    submenu: [
-      { label: 'Divorce', href: '/family-law/divorce' },
-      { label: 'Custody', href: '/family-law/custody' },
-      { label: 'Child Support', href: '/family-law/child-support' },
-    ]
+    label: 'FAQ',
+    href: '#faq',
   },
-  { label: 'Real Estate Law', href: '/real-estate' },
-  { label: 'About', href: '/about' },
+  {
+    label: 'Contact',
+    href: '#contact',
+  },
 ]
