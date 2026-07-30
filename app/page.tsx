@@ -210,7 +210,7 @@ export default function Home() {
         foundersName="Frank Perez, Esq."
         foundersTitle="Founder & Principal Attorney"
         description="With over 40 years of experience, Frank Perez has defended high-profile international cases. His unique background as a former Dallas Police Officer (1982) and Assistant District Attorney gives him unparalleled insight into government prosecution strategies. He aggressively identifies weaknesses in government cases and fights to protect your constitutional rights."
-        image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop"
+        image="/frank.png"
         ctaText="Schedule Consultation"
         ctaHref="tel:+12148289911"
         backgroundColor="white"
