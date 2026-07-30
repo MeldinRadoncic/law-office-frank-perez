@@ -42,7 +42,7 @@ function getColorClass(color: HeadingColor): string {
 
 function getAlignClass(level?: string): string {
   if (level === 'h2' || level === 'h3' || level === 'h4') {
-    return 'text-center lg:text-left'
+    return 'text-center'
   }
   return ''
 }
