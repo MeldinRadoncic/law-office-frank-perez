@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
-import EmblaCarousel from 'embla-carousel-react'
+import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
