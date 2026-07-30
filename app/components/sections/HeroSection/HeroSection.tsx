@@ -37,8 +37,8 @@ export function HeroSection({
         }}
       />
 
-      {/* LAYER 2: White Overlay (0.3 opacity - image prominently visible) */}
-      <div className="absolute inset-0 w-full h-full bg-white/30 z-10" />
+      {/* LAYER 2: White Overlay (0.5 opacity) */}
+      <div className="absolute inset-0 w-full h-full bg-white/50 z-10" />
 
       {/* LAYER 3: Content (Not affected by overlay opacity) */}
       <div className="relative z-20 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
