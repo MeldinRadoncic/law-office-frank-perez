@@ -62,8 +62,11 @@ export function TestimonialsSection() {
         '(min-width: 1024px)': { slides: { perView: 3 } },
       },
     },
-    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+    [Autoplay({ delay: 5000, stopOnInteraction: true })]
   )
+
+  const scrollPrev = () => emblaApi?.scrollPrev()
+  const scrollNext = () => emblaApi?.scrollNext()
 
   return (
     <section ref={ref} className="w-full py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden">
@@ -120,18 +123,44 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Navigation Dots */}
-        <div className="mt-12 flex justify-center gap-3">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => emblaApi?.scrollTo(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === 0 ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
+        {/* Navigation - Arrows + Dots */}
+        <div className="mt-12 flex flex-col items-center gap-8">
+          {/* Arrow Buttons */}
+          <div className="flex items-center gap-6">
+            <motion.button
+              onClick={scrollPrev}
+              className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Previous testimonial"
+            >
+              ←
+            </motion.button>
+
+            <motion.button
+              onClick={scrollNext}
+              className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Next testimonial"
+            >
+              →
+            </motion.button>
+          </div>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === 0 ? 'bg-blue-600 w-8' : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
