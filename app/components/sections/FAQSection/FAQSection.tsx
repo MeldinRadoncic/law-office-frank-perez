@@ -79,12 +79,11 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
           <p className="text-gray-700 mb-6 text-lg">
             Have more questions?
           </p>
-          <a
-            href="tel:+12148289911"
+          <button
             className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/50 transform hover:scale-105"
           >
             Call for Free Consultation
-          </a>
+          </button>
         </div>
       </div>
     </section>
