@@ -179,7 +179,7 @@ export default function Home() {
     <>
       <NavigationHeader
         navLinks={navLinks}
-        logoUrl="/logo.jpg"
+        logoUrl="/frank-logo.png"
         companyName="Law Office Frank Perez"
         phone="(214) 828-9911"
       />
@@ -230,7 +230,7 @@ export default function Home() {
         description="Available 24/7 for emergencies. Call now for immediate consultation."
       />
       <FooterSection
-        logo="🏛️"
+        logo=""
         companyName="Law Office Frank Perez, P.C."
         phone="(214) 828-9911"
         email="fperez@frankperezlaw.com"
