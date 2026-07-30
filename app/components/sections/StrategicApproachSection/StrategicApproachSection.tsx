@@ -148,7 +148,7 @@ export function StrategicApproachSection({
                   <div className="relative z-10 text-center sm:text-center md:text-center">
                     {/* Icon */}
                     <motion.div
-                      className="text-6xl mb-4 flex justify-center text-amber-600"
+                      className={`text-6xl mb-4 flex justify-center ${index !== 1 ? 'text-amber-600' : ''}`}
                       animate={activeIndex === index ? { scale: 1.1, rotate: 12 } : { scale: 1, rotate: 0 }}
                       transition={{ type: 'spring', stiffness: 200 }}
                     >
