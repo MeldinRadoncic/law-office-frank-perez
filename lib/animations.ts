@@ -21,7 +21,7 @@ export const slideInUpVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeInOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -30,7 +30,7 @@ export const slideInDownVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: 'easeInOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -39,7 +39,7 @@ export const slideInLeftVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: 'easeInOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -48,7 +48,7 @@ export const slideInRightVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.8, ease: 'easeInOut' },
+    transition: { duration: 0.8 },
   },
 }
 
@@ -97,7 +97,6 @@ export const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeInOut',
     },
   },
 }
