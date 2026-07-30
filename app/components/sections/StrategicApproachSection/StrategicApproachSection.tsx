@@ -93,7 +93,7 @@ export function StrategicApproachSection({
             />
           </div>
 
-          <Heading level="h2" size="4xl" color="primary" className="mb-6 text-4xl md:text-5xl lg:text-6xl">
+          <Heading level="h2" size="4xl" color="primary" className="mb-6 text-4xl md:text-5xl lg:text-6xl text-center">
             {title}
           </Heading>
 
