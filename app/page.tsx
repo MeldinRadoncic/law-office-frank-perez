@@ -222,8 +222,8 @@ export default function Home() {
       />
       <ToolsAndResourcesSection tools={tools} title="" subtitle="" />
       <TestimonialsSection />
-      <BlogsSection blogs={blogs} title="" description="" />
       <FAQSection faqs={faqs} />
+      <BlogsSection blogs={blogs} title="" description="" />
       <CTASection
         title="Need Immediate Legal Help?"
         subtitle="Contact Frank Perez Today"
