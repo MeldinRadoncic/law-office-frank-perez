@@ -76,9 +76,9 @@ export function TestimonialsSection() {
   const scrollTo = (index: number) => emblaApi?.scrollTo(index)
 
   return (
-    <section ref={ref} className="w-full py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden">
+    <section ref={ref} className="w-full py-20 md:py-24 lg:py-32 bg-slate-950 relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Centered */}
@@ -88,10 +88,10 @@ export function TestimonialsSection() {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Client Testimonials
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-300">
             See what our clients say about their experience
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export function TestimonialsSection() {
                 className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
               >
                 <motion.div
-                  className="group h-full p-8 md:p-10 rounded-2xl bg-white border-2 border-gray-200 hover:border-blue-400/50 shadow-md hover:shadow-xl transition-all duration-500"
+                  className="group h-full p-8 md:p-10 rounded-2xl bg-gray-900/50 border-2 border-gray-700 hover:border-blue-500/50 shadow-md hover:shadow-xl transition-all duration-500 backdrop-blur-sm"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -115,14 +115,14 @@ export function TestimonialsSection() {
                   <div className="mb-6 text-3xl">★★★★★</div>
 
                   {/* Quote */}
-                  <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                  <blockquote className="text-gray-200 text-lg leading-relaxed mb-6 italic">
                     "{testimonial.quote}"
                   </blockquote>
 
                   {/* Author Info */}
                   <div className="mt-auto">
-                    <p className="font-bold text-gray-900 mb-1">{testimonial.author}</p>
-                    <p className="text-sm text-blue-600 font-semibold">{testimonial.role}</p>
+                    <p className="font-bold text-white mb-1">{testimonial.author}</p>
+                    <p className="text-sm text-blue-400 font-semibold">{testimonial.role}</p>
                   </div>
                 </motion.div>
               </div>
@@ -161,8 +161,8 @@ export function TestimonialsSection() {
               onClick={() => scrollTo(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 selectedIndex === index
-                  ? 'bg-blue-600 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
+                  ? 'bg-blue-500 w-8'
+                  : 'bg-gray-600 hover:bg-gray-500'
               }`}
               whileHover={{ scale: 1.2 }}
               aria-label={`Go to testimonial ${index + 1}`}
