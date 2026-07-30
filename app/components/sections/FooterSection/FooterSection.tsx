@@ -141,7 +141,7 @@ export function FooterSection({
           <p className="text-sm text-gray-400">
             Powered by{' '}
             <a
-              href="https://www.aiwizardpro.com"
+              href="https://appwizardpro.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 transition-colors font-semibold"
