@@ -1,9 +1,10 @@
 'use client'
 
 import { Heading } from '@/app/components/common/Heading'
-import { spacing, responsive } from '@/lib/design-tokens'
+import { responsive } from '@/lib/design-tokens'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useState } from 'react'
 
 interface ValuePoint {
   icon: string
@@ -25,143 +26,184 @@ export function StrategicApproachSection({
   values,
 }: StrategicApproachSectionProps) {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.2,
     triggerOnce: true,
   })
+
+  const [activeIndex, setActiveIndex] = useState(0)
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
       },
     },
   }
 
-  const cardVariants = {
+  const stepVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
-      scale: 0.95,
+      x: -30,
     },
     visible: {
       opacity: 1,
-      y: 0,
-      scale: 1,
+      x: 0,
       transition: {
         type: 'spring',
-        stiffness: 100,
-        damping: 15,
-        duration: 0.6,
+        stiffness: 80,
+        damping: 12,
       },
     },
   }
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const lineVariants = {
+    hidden: { scaleX: 0 },
     visible: {
-      opacity: 1,
-      y: 0,
+      scaleX: 1,
       transition: {
-        duration: 0.8,
-        ease: 'easeOut',
+        duration: 1.2,
+        ease: 'easeInOut',
       },
     },
   }
 
   return (
-    <section ref={ref} className="w-full py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden">
-      {/* Decorative gradient accent */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-amber-500/10 to-blue-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-500/5 to-slate-500/5 rounded-full blur-3xl" />
+    <section ref={ref} className="w-full py-20 md:py-32 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
+      {/* Animated decorative elements */}
+      <motion.div
+        className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-amber-400/5 to-blue-400/5 rounded-full blur-3xl"
+        animate={{ y: [0, 30, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div
+        className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-blue-400/5 to-amber-400/5 rounded-full blur-3xl"
+        animate={{ y: [0, -30, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
+      />
 
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
-        {/* Header Section */}
+        {/* Header */}
         <motion.div
-          className="mb-16 md:mb-24 max-w-3xl"
-          variants={headerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          className="mb-20 max-w-3xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
         >
-          {/* Subtitle Badge */}
           <div className="mb-6 inline-block">
-            <span className="text-sm md:text-base font-semibold text-amber-600 uppercase tracking-wider">
+            <span className="text-sm md:text-base font-bold text-amber-600 uppercase tracking-widest">
               {subtitle}
             </span>
             <motion.div
-              className="mt-2 h-1 w-16 bg-gradient-to-r from-amber-600 to-blue-600 rounded-full"
-              initial={{ width: 0 }}
-              animate={inView ? { width: 64 } : { width: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mt-3 h-1.5 w-20 bg-gradient-to-r from-amber-600 via-blue-600 to-amber-600 rounded-full"
+              initial={{ width: 0, opacity: 0 }}
+              animate={inView ? { width: 80, opacity: 1 } : { width: 0, opacity: 0 }}
+              transition={{ delay: 0.2, duration: 1 }}
             />
           </div>
 
-          {/* Main Title */}
-          <Heading
-            level="h2"
-            size="4xl"
-            color="primary"
-            className="mb-6 text-4xl md:text-5xl lg:text-6xl"
-          >
+          <Heading level="h2" size="4xl" color="primary" className="mb-6 text-4xl md:text-5xl lg:text-6xl">
             {title}
           </Heading>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
             {mainDescription}
           </p>
         </motion.div>
 
-        {/* Values Grid - Staggered Animation */}
+        {/* Animated Process Steps */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6"
+          className="relative"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          {values.map((value, index) => (
+          {/* Timeline connecting line - hidden on mobile */}
+          <div className="hidden lg:block absolute top-1/3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-300/40 to-transparent">
             <motion.div
-              key={index}
-              className={`group relative ${index % 2 === 1 ? 'md:mt-12 lg:mt-0' : ''}`}
-              variants={cardVariants}
-            >
-              {/* Decorative corner accent */}
-              <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              className="h-full bg-gradient-to-r from-amber-600 to-blue-600"
+              variants={lineVariants}
+            />
+          </div>
 
-              {/* Card */}
-              <div className="relative bg-gradient-to-br from-slate-50 to-white rounded-2xl p-8 border border-gray-100 hover:border-amber-200/50 shadow-sm hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500 h-full overflow-hidden">
-                {/* Background gradient on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-50/0 to-blue-50/0 group-hover:from-amber-50/50 group-hover:to-blue-50/30 transition-all duration-500 rounded-2xl" />
+          {/* Steps Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                className="relative"
+                variants={stepVariants}
+                onMouseEnter={() => setActiveIndex(index)}
+              >
+                {/* Step number circle */}
+                <motion.div
+                  className="absolute -top-6 left-0 w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                  whileHover={{ scale: 1.15, rotate: 360 }}
+                  transition={{ type: 'spring', stiffness: 200 }}
+                >
+                  {index + 1}
+                </motion.div>
 
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
+                {/* Card */}
+                <motion.div
+                  className={`relative group rounded-2xl p-8 pt-16 border-2 transition-all duration-300 cursor-pointer overflow-hidden h-full ${
+                    activeIndex === index
+                      ? 'border-amber-500 bg-gradient-to-br from-amber-50 to-blue-50 shadow-2xl shadow-amber-500/20'
+                      : 'border-gray-200 bg-white hover:border-amber-300 shadow-md hover:shadow-xl'
+                  }`}
+                >
+                  {/* Animated background on active */}
                   <motion.div
-                    className="text-5xl md:text-6xl mb-4 inline-block"
-                    whileHover={{ scale: 1.2, rotate: 8 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
-                  >
-                    {value.icon}
-                  </motion.div>
+                    className="absolute inset-0 bg-gradient-to-br from-amber-600/0 to-blue-600/0"
+                    animate={
+                      activeIndex === index
+                        ? { opacity: [0.05, 0.1, 0.05] }
+                        : { opacity: 0 }
+                    }
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
 
-                  {/* Title */}
-                  <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-3 group-hover:text-amber-600 transition-colors duration-300">
-                    {value.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <motion.div
+                      className="text-6xl mb-4 inline-block"
+                      animate={activeIndex === index ? { scale: 1.1, rotate: 12 } : { scale: 1, rotate: 0 }}
+                      transition={{ type: 'spring', stiffness: 200 }}
+                    >
+                      {value.icon}
+                    </motion.div>
 
-                  {/* Description */}
-                  <p className="text-gray-700 leading-relaxed text-base">
-                    {value.description}
-                  </p>
+                    {/* Title */}
+                    <h3 className={`text-2xl font-bold mb-3 transition-colors duration-300 ${
+                      activeIndex === index ? 'text-amber-600' : 'text-blue-900'
+                    }`}>
+                      {value.title}
+                    </h3>
 
-                  {/* Bottom accent line on hover */}
-                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-amber-600 to-blue-600 group-hover:w-full transition-all duration-500 rounded-full" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed">
+                      {value.description}
+                    </p>
+
+                    {/* Active indicator line */}
+                    <motion.div
+                      className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-amber-600 to-blue-600"
+                      animate={activeIndex === index ? { width: '100%' } : { width: '0%' }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Connecting line to next step - hidden on mobile */}
+                {index < values.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/4 -right-4 w-8 h-0.5 bg-gradient-to-r from-amber-300 to-transparent opacity-30" />
+                )}
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
