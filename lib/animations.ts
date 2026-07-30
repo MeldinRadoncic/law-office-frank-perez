@@ -5,7 +5,122 @@
  */
 
 // ============================================
-// SCROLL ANIMATION CLASSES
+// FRAMER MOTION ANIMATION VARIANTS
+// ============================================
+
+export const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8, ease: 'easeOut' },
+  },
+}
+
+export const slideInUpVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const slideInDownVariants = {
+  hidden: { opacity: 0, y: -30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const slideInLeftVariants = {
+  hidden: { opacity: 0, x: -40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const slideInRightVariants = {
+  hidden: { opacity: 0, x: 40 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+}
+
+export const scaleInVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+}
+
+export const bounceInVariants = {
+  hidden: { opacity: 0, scale: 0.3 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 260,
+      damping: 20,
+      duration: 0.8,
+    },
+  },
+}
+
+// ============================================
+// STAGGER CONTAINER VARIANTS
+// ============================================
+
+export const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.2,
+    },
+  },
+}
+
+export const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+// ============================================
+// HOVER/TAP ANIMATIONS
+// ============================================
+
+export const hoverTapVariants = {
+  whileHover: { scale: 1.05, transition: { duration: 0.2 } },
+  whileTap: { scale: 0.95 },
+}
+
+export const cardHoverVariants = {
+  whileHover: {
+    y: -8,
+    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+    transition: { duration: 0.3 },
+  },
+}
+
+// ============================================
+// SCROLL ANIMATION CLASSES (Tailwind)
 // ============================================
 
 export const scrollAnimations = {
