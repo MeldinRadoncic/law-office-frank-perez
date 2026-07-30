@@ -19,7 +19,7 @@ export function NavigationHeader({
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
           <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-28">
             {/* Logo */}
-            <Link href="/" className="hover:opacity-80 transition-opacity flex-shrink-0">
+            <button className="hover:opacity-80 transition-opacity flex-shrink-0">
               {logoUrl && (
                 <img
                   src={logoUrl}
@@ -27,7 +27,7 @@ export function NavigationHeader({
                   className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto object-contain"
                 />
               )}
-            </Link>
+            </button>
 
             {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-8 lg:gap-12">
@@ -43,12 +43,11 @@ export function NavigationHeader({
             </nav>
 
             {/* Desktop Phone CTA */}
-            <a
-              href={`tel:${phone}`}
+            <button
               className="hidden md:flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg font-semibold"
             >
               <span>{phone}</span>
-            </a>
+            </button>
 
             {/* Mobile: Hamburger Menu Button */}
             <button
@@ -121,12 +120,11 @@ export function NavigationHeader({
 
               {/* Mobile Phone CTA */}
               <div className="p-6 border-t border-gray-200">
-                <a
-                  href={`tel:${phone}`}
+                <button
                   className="block w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all text-center font-semibold"
                 >
                   {phone}
-                </a>
+                </button>
               </div>
             </motion.div>
           </>
