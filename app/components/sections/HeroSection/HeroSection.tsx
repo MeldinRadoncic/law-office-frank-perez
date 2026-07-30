@@ -22,25 +22,25 @@ export function HeroSection({
   ctaPhone,
   backgroundImage,
 }: HeroSectionProps) {
-  // Super fast animations - appear immediately
+  // Instant animations - appear RIGHT NOW
   const heroContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.05,
+        staggerChildren: 0.03,
+        delayChildren: 0,
       },
     },
   }
 
   const heroItemVariants = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
