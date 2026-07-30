@@ -34,7 +34,7 @@ export function AboutSection({
           <div className="flex justify-center lg:justify-start">
             <div className="relative group">
               {/* Decorative background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-slate-700 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500 shadow-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500 to-slate-600 rounded-2xl transform -rotate-6 group-hover:rotate-0 transition-transform duration-500 shadow-xl" />
 
               {/* Image Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
