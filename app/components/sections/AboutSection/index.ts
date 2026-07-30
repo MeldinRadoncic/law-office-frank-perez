@@ -1,1 +1,1 @@
-export { AboutSection, type AboutSectionProps } from './AboutSection'
+export { AboutSection } from './AboutSection'
