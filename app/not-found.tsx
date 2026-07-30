@@ -18,14 +18,7 @@ const navigationProps = {
   logoUrl: '/logo.jpg',
   companyName: 'Law Office Frank Perez, PLLC',
   phone: '(646) 492-9700',
-  navLinks: [
-    { label: 'Home', href: '/' },
-    { label: 'Immigration', href: '/immigration/employment-visas' },
-    { label: 'Business', href: '/business/planning' },
-    { label: 'Family', href: '/family-law/divorce' },
-    { label: 'Real Estate', href: '/real-estate' },
-    { label: 'About', href: '/about' },
-  ],
+  navLinks: [],
 }
 
 const footerProps = {
