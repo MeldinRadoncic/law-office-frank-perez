@@ -5,8 +5,8 @@
 export interface Recognition {
   id: string
   title: string
+  year: string
   icon?: string
-  year?: string
 }
 
 export interface RecognitionsSectionProps {

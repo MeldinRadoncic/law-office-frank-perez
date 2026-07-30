@@ -42,7 +42,7 @@ export function RecognitionsSection({
       opacity: 1,
       x: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 15,
       },
@@ -90,7 +90,7 @@ export function RecognitionsSection({
                   <motion.div
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold text-lg shadow-lg"
                     whileHover={{ scale: 1.15 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
+                    transition={{ type: 'spring' as const, stiffness: 200 }}
                   >
                     ✓
                   </motion.div>

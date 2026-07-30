@@ -47,16 +47,16 @@ const navLinks = getNavLinks()
 // Trust indicators data
 const trustStats: StatCard[] = [
   {
-    statistic: '40+',
-    description: 'Years of Experience',
+    number: '40+',
+    label: 'Years of Experience',
   },
   {
-    statistic: '500+',
-    description: 'Cases Defended Successfully',
+    number: '500+',
+    label: 'Cases Defended Successfully',
   },
   {
-    statistic: '24/7',
-    description: 'Available for Emergencies',
+    number: '24/7',
+    label: 'Available for Emergencies',
   },
 ]
 
@@ -88,39 +88,45 @@ const strategyValues: ValuePoint[] = [
 const practiceAreas: PracticeArea[] = [
   {
     icon: '💊',
+    id: 'drug-charges',
     title: 'Drug Charges',
     description: 'International drug crimes are aggressively prosecuted. Frank Perez has defended hundreds of cases.',
-    link: '#',
+    href: '#',
   },
   {
     icon: '🏛️',
+    id: 'ofac-defense',
     title: 'OFAC Defense',
     description: 'Help with OFAC legal problems and SDN list placement. Expert sanctions defense.',
-    link: '#',
+    href: '#',
   },
   {
     icon: '💰',
+    id: 'money-laundering',
     title: 'Money Laundering',
     description: 'Complex financial crime defense. Protecting your rights in federal investigations.',
-    link: '#',
+    href: '#',
   },
   {
     icon: '✈️',
+    id: 'extradition-defense',
     title: 'Extradition Defense',
     description: 'Defending against international extradition proceedings. Proven track record.',
-    link: '#',
+    href: '#',
   },
   {
     icon: '⚖️',
+    id: 'federal-conspiracy',
     title: 'Federal Conspiracy',
     description: 'Complex federal conspiracy charges require experienced defense strategy.',
-    link: '#',
+    href: '#',
   },
   {
     icon: '📋',
+    id: 'civil-matters',
     title: 'Civil Matters',
     description: 'Criminal defense, personal injury claims, contract disputes, civil litigation.',
-    link: '#',
+    href: '#',
   },
 ]
 
@@ -130,14 +136,17 @@ const tools: Tool[] = []
 // Recognitions data
 const recognitions: Recognition[] = [
   {
+    id: 'police-officer',
     title: 'Former Dallas Police Officer',
     year: '1982',
   },
   {
+    id: 'assistant-da',
     title: 'Former Assistant District Attorney',
     year: 'Dallas County',
   },
   {
+    id: 'criminal-defense',
     title: '40+ Years Criminal Defense',
     year: 'Established Track Record',
   },
@@ -152,18 +161,22 @@ const blogs: Blog[] = []
 // FAQ data
 const faqs: FAQ[] = [
   {
+    id: 'being-questioned',
     question: 'What should I say if I\'m being questioned?',
     answer: 'You need to remain silent. Most police and government officials are skilled interrogators. Simply tell them that you\'re invoking your rights to an attorney and to remain silent.',
   },
   {
+    id: 'indicted',
     question: 'What if I am indicted?',
     answer: 'If you are indicted, you will proceed to a bond hearing. The judge will decide if you will be released on bond pending trial. You need a criminal defense attorney to help fight for your release.',
   },
   {
+    id: 'go-to-trial',
     question: 'Will my case go to trial?',
     answer: 'It depends on the situation. If your crime is not serious, prosecutors could be willing to negotiate a plea. Whether a case proceeds to trial is a strategic decision.',
   },
   {
+    id: 'convicted',
     question: 'If I am convicted, what next?',
     answer: 'We will work with you quickly to decide whether filing an appeal would be advisable. If so, we\'ll get to work immediately on proper filings and the brief.',
   },

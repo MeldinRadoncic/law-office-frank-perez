@@ -4,10 +4,10 @@
 
 export interface PracticeArea {
   id: string
+  icon: string
   title: string
   description: string
-  icon?: string
-  href?: string
+  href: string
 }
 
 export interface PracticeAreasSectionProps {

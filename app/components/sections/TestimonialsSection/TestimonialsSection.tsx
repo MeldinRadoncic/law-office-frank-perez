@@ -64,11 +64,14 @@ export function TestimonialsSection() {
     if (!emblaApi) return
 
     const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedIndex() % testimonials.length)
+      setSelectedIndex(emblaApi.slidesInView()[0] ?? 0)
     }
 
+    onSelect()
     emblaApi.on('select', onSelect)
-    return () => emblaApi.off('select', onSelect)
+    return () => {
+      emblaApi.off('select', onSelect)
+    }
   }, [emblaApi, testimonials.length])
 
   const scrollPrev = () => emblaApi?.scrollPrev()

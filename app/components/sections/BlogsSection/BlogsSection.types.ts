@@ -6,7 +6,7 @@ export interface Blog {
   date: string
   author: string
   href: string
-  image?: string
+  image: string
 }
 
 export interface BlogsSectionProps {

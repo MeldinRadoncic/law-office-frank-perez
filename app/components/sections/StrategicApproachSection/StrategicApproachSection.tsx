@@ -2,7 +2,7 @@
 
 import { Heading } from '@/app/components/common/Heading'
 import { responsive } from '@/lib/design-tokens'
-import { motion } from 'framer-motion'
+import { motion, Variants, easeInOut } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
 
@@ -43,7 +43,7 @@ export function StrategicApproachSection({
     },
   }
 
-  const stepVariants = {
+  const stepVariants: Variants = {
     hidden: {
       opacity: 0,
       x: -30,
@@ -52,20 +52,20 @@ export function StrategicApproachSection({
       opacity: 1,
       x: 0,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 80,
         damping: 12,
       },
     },
   }
 
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { scaleX: 0 },
     visible: {
       scaleX: 1,
       transition: {
         duration: 1.2,
-        ease: 'easeInOut',
+        ease: easeInOut,
       },
     },
   }
@@ -130,7 +130,7 @@ export function StrategicApproachSection({
                 <motion.div
                   className="absolute -top-6 left-0 w-14 h-14 rounded-full bg-gradient-to-br from-amber-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg"
                   whileHover={{ scale: 1.15, rotate: 360 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
+                  transition={{ type: 'spring' as const, stiffness: 200 }}
                 >
                   {index + 1}
                 </motion.div>
@@ -150,7 +150,7 @@ export function StrategicApproachSection({
                     <motion.div
                       className={`text-6xl mb-4 flex justify-center ${index !== 1 ? 'text-amber-600' : ''}`}
                       animate={activeIndex === index ? { scale: 1.1, rotate: 12 } : { scale: 1, rotate: 0 }}
-                      transition={{ type: 'spring', stiffness: 200 }}
+                      transition={{ type: 'spring' as const, stiffness: 200 }}
                     >
                       {value.icon}
                     </motion.div>

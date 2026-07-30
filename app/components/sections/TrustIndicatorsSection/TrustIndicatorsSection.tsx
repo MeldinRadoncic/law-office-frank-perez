@@ -2,14 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { containerVariants, itemVariants, slideInUpVariants } from '@/lib/animations'
-
-interface StatCard {
-  statistic: string
-  description: string
-}
+import type { StatCard } from './TrustIndicatorsSection.types'
 
 interface TrustIndicatorsSectionProps {
-  stats: StatCard[]
+  stats?: StatCard[]
 }
 
 export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
@@ -35,7 +31,7 @@ export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
         variants={containerVariants}
       >
         <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" variants={containerVariants}>
-          {stats.map((stat, index) => (
+          {stats?.map((stat, index) => (
             <motion.div
               key={index}
               className="group p-8 md:p-10 rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-blue-500/20 hover:border-blue-500/50 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-600/20"
@@ -58,7 +54,7 @@ export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
                 >
                   <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
-                    {stat.statistic}
+                    {stat.number}
                   </div>
                 </motion.div>
 
@@ -69,7 +65,7 @@ export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.4, duration: 0.6 }}
                 >
-                  {stat.description}
+                  {stat.label}
                 </motion.p>
               </div>
             </motion.div>

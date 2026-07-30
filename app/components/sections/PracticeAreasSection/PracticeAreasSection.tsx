@@ -2,15 +2,9 @@
 
 import { Heading } from '@/app/components/common/Heading'
 import { responsive } from '@/lib/design-tokens'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-
-interface PracticeArea {
-  icon: string
-  title: string
-  description: string
-  link: string
-}
+import type { PracticeArea } from './PracticeAreasSection.types'
 
 interface PracticeAreasSectionProps {
   practiceAreas: PracticeArea[]
@@ -56,7 +50,7 @@ export function PracticeAreasSection({
     },
   }
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 40,
@@ -67,7 +61,7 @@ export function PracticeAreasSection({
       y: 0,
       scale: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 15,
       },
@@ -129,7 +123,7 @@ export function PracticeAreasSection({
           {practiceAreas.map((area, index) => (
             <motion.a
               key={index}
-              href={area.link}
+              href={area.href}
               className="group relative p-8 md:p-10 rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:shadow-2xl hover:border-amber-300/50 transition-all duration-500 overflow-hidden cursor-pointer"
               variants={cardVariants}
               whileHover={{ translateY: -8 }}
@@ -140,7 +134,7 @@ export function PracticeAreasSection({
                 <motion.div
                   className="w-16 h-16 rounded-2xl bg-white/50 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/80 transition-all duration-300 mx-auto"
                   whileHover={{ scale: 1.15, rotate: 10 }}
-                  transition={{ type: 'spring', stiffness: 200 }}
+                  transition={{ type: 'spring' as const, stiffness: 200 }}
                 >
                   <span className="text-4xl">{area.icon}</span>
                 </motion.div>
@@ -164,7 +158,7 @@ export function PracticeAreasSection({
                   <motion.span
                     initial={{ x: 0 }}
                     whileHover={{ x: 6 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
+                    transition={{ type: 'spring' as const, stiffness: 200 }}
                   >
                     →
                   </motion.span>

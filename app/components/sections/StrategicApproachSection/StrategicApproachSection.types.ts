@@ -3,9 +3,9 @@
  */
 
 export interface ValuePoint {
+  icon: string
   title: string
   description: string
-  icon?: string
 }
 
 export interface StrategicApproachSectionProps {

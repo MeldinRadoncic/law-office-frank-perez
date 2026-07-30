@@ -90,7 +90,7 @@ export function NavigationHeader({
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 120 }}
+              transition={{ type: 'spring' as const, damping: 25, stiffness: 120 }}
               className="fixed top-0 right-0 w-[60%] max-w-xs h-screen z-40 bg-white shadow-2xl overflow-y-auto"
             >
               {/* Close Button */}

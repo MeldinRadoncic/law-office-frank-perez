@@ -120,7 +120,7 @@ export function BlogsSection({
                   <motion.div
                     className="flex justify-center lg:justify-start order-2 lg:order-1"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 200 }}
+                    transition={{ type: 'spring' as const, stiffness: 200 }}
                   >
                     <img
                       src={blog.image}
