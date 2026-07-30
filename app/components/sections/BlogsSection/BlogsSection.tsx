@@ -27,39 +27,39 @@ export function BlogsSection({
 }: BlogsSectionProps) {
   const defaultBlogs: Blog[] = [
     {
-      title: 'Understanding Your Rights in Federal Criminal Cases',
-      description: 'Learn what to expect when facing federal charges. This comprehensive guide covers your constitutional rights, the federal prosecution process, and strategies for mounting an effective defense in complex federal cases.',
-      image: 'https://images.unsplash.com/photo-1554224311-beab60cf0ee1?w=800&h=500&fit=crop&q=80',
+      title: 'Getting Started with Machine Learning in 2026',
+      description: 'Explore the fundamentals of machine learning and how it\'s transforming industries. This guide covers supervised learning, neural networks, and practical applications using modern frameworks and tools.',
+      image: 'https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=800&h=500&fit=crop&q=80',
       date: 'March 15, 2026',
-      category: 'Criminal Defense',
+      category: 'Artificial Intelligence',
     },
     {
-      title: 'International Extradition: What You Need to Know',
-      description: 'Facing extradition charges? Understand the legal process, your rights, and how experienced counsel can help protect you. Frank Perez has successfully defended dozens of international extradition cases.',
-      image: 'https://images.unsplash.com/photo-1516534775068-bb57a52f4b40?w=800&h=500&fit=crop&q=80',
+      title: 'Web Development Best Practices: React vs Vue vs Angular',
+      description: 'Compare the top JavaScript frameworks and discover which is best for your project. Learn about component architecture, state management, performance optimization, and real-world use cases.',
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop&q=80',
       date: 'March 8, 2026',
-      category: 'International Law',
+      category: 'Web Development',
     },
     {
-      title: 'OFAC Sanctions and Your Rights: Expert Defense Strategies',
-      description: 'OFAC violations carry serious penalties. Discover how to navigate sanctions issues, defend against allegations, and protect your interests in complex international trade matters.',
-      image: 'https://images.unsplash.com/photo-1611692037874-931531673b8b?w=800&h=500&fit=crop&q=80',
+      title: 'Cloud Infrastructure Guide: AWS vs Google Cloud vs Azure',
+      description: 'Navigate the cloud computing landscape with our comprehensive comparison. Understand pricing models, scalability options, security features, and which platform fits your infrastructure needs.',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=500&fit=crop&q=80',
       date: 'March 1, 2026',
-      category: 'Sanctions Defense',
+      category: 'Cloud Computing',
     },
     {
-      title: 'Drug Trafficking Charges: Building a Winning Defense',
-      description: 'Drug trafficking allegations demand aggressive legal representation. Learn about defense strategies, evidence challenges, and how to protect your future with experienced counsel.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop&q=80',
+      title: 'Cybersecurity Essentials: Protecting Your Applications',
+      description: 'Learn critical security practices for modern applications. Covers authentication, encryption, SQL injection prevention, CSRF protection, and security testing methodologies to keep your systems safe.',
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=500&fit=crop&q=80',
       date: 'February 22, 2026',
-      category: 'Drug Defense',
+      category: 'Cybersecurity',
     },
     {
-      title: 'White Collar Crime Defense: Protecting Your Reputation and Future',
-      description: 'Facing white collar charges? Understand the complexities of federal prosecution, discovery procedures, and how to mount an effective defense while protecting your professional reputation.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop&q=80',
+      title: 'DevOps and CI/CD Pipelines: Automating Your Deployment',
+      description: 'Master continuous integration and deployment practices. Discover Docker containerization, Kubernetes orchestration, automated testing, and how to streamline your development workflow.',
+      image: 'https://plus.unsplash.com/premium_photo-1681487942927-e1a2786e6036?w=800&h=500&fit=crop&q=80',
       date: 'February 15, 2026',
-      category: 'White Collar',
+      category: 'DevOps',
     },
   ]
 
@@ -71,14 +71,8 @@ export function BlogsSection({
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      slidesToScroll: 1,
       loop: true,
       align: 'start',
-      breakpoints: {
-        '(max-width: 640px)': { slides: { perView: 1 } },
-        '(min-width: 641px) and (max-width: 1023px)': { slides: { perView: 1 } },
-        '(min-width: 1024px)': { slides: { perView: 1 } },
-      },
     },
     [Autoplay({ delay: 6000, stopOnInteraction: true })]
   )
