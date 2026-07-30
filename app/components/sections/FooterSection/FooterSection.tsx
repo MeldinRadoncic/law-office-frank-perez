@@ -130,12 +130,9 @@ export function FooterSection({
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <p>{copyright}</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-blue-400 transition-colors">
+            <span className="text-gray-400 cursor-default">
               Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-blue-400 transition-colors">
-              Terms of Service
-            </Link>
+            </span>
           </div>
         </div>
       </div>
