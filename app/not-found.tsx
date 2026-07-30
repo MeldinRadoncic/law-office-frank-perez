@@ -15,7 +15,7 @@ export const metadata: Metadata = createMetadata({
 
 const navigationProps = {
   logo: '🏛️',
-  logoUrl: '/logo.jpg',
+  logoUrl: '/frank-logo.png',
   companyName: 'Law Office Frank Perez, PLLC',
   phone: '(646) 492-9700',
   navLinks: [],
@@ -23,7 +23,7 @@ const navigationProps = {
 
 const footerProps = {
   logo: '🏛️',
-  logoUrl: '/logo.jpg',
+  logoUrl: '/frank-logo.png',
   companyName: 'Law Office Frank Perez, PLLC',
   phone: '(646) 492-9700',
   email: 'info@lawofficefrankperez.com',

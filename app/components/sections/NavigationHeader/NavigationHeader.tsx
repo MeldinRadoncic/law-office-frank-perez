@@ -10,31 +10,27 @@ export function NavigationHeader({
   navLinks = [],
 }: NavigationHeaderProps) {
   return (
-    <header className="fixed top-0 w-full z-50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b border-blue-900/30 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo & Company Name */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+    <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200 shadow-md">
+      <div className="w-full px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
+        <div className="flex items-center justify-between h-20 md:h-24 lg:h-28">
+          {/* Logo Only */}
+          <Link href="/" className="hover:opacity-80 transition-opacity">
             {logoUrl && (
               <img
                 src={logoUrl}
                 alt={companyName || 'Logo'}
-                className="h-12 w-12 rounded-lg object-cover shadow-lg"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
               />
             )}
-            <div className="flex flex-col">
-              <span className="text-sm font-semibold text-blue-400">LAW OFFICE</span>
-              <span className="text-lg font-bold text-white hidden sm:inline">{companyName}</span>
-            </div>
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 md:gap-10 lg:gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors duration-300 text-lg lg:text-xl font-semibold"
               >
                 {link.label}
               </Link>
@@ -45,7 +41,7 @@ export function NavigationHeader({
           <div className="flex items-center gap-4">
             <a
               href={`tel:${phone}`}
-              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/50"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg"
             >
               <span className="hidden md:inline text-sm font-semibold">{phone}</span>
               <span className="md:hidden">📞</span>
