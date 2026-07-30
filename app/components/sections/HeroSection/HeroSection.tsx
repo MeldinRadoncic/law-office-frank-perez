@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Heading } from '@/app/components/common/Heading'
 import { spacing, responsive, transitions } from '@/lib/design-tokens'
@@ -20,7 +19,6 @@ export function HeroSection({
   tagline,
   description,
   ctaText,
-  ctaHref,
   ctaPhone,
   backgroundImage,
 }: HeroSectionProps) {
@@ -114,7 +112,7 @@ export function HeroSection({
             {description}
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - NO ACTION */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap"
             variants={heroContainerVariants}
@@ -124,12 +122,11 @@ export function HeroSection({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
-                href={ctaHref}
-                className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl hover:shadow-blue-600/50 text-center inline-block`}
+              <button
+                className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl hover:shadow-blue-600/50 text-center`}
               >
                 {ctaText}
-              </Link>
+              </button>
             </motion.div>
 
             <motion.div
@@ -137,12 +134,11 @@ export function HeroSection({
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <a
-                href={`tel:${ctaPhone}`}
-                className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:bg-blue-50 text-center inline-block`}
+              <button
+                className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:bg-blue-50 text-center`}
               >
                 {ctaPhone}
-              </a>
+              </button>
             </motion.div>
           </motion.div>
 

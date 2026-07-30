@@ -85,24 +85,20 @@ export function CTASection({ title, subtitle, description }: CTASectionProps) {
         >
           {/* Primary CTA */}
           <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href="tel:+12148289911"
+            <button
               className="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-600/50 w-full sm:w-auto text-center"
             >
               Call (214) 828-9911
-            </a>
+            </button>
           </motion.div>
 
           {/* Secondary CTA */}
           <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href="https://wa.me/+12148289911"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               className="inline-block px-10 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-lg font-bold text-lg hover:bg-white/20 transition-all duration-300 w-full sm:w-auto text-center"
             >
               WhatsApp Message
-            </a>
+            </button>
           </motion.div>
         </motion.div>
 

@@ -167,12 +167,11 @@ export function AboutSection({
               transition={{ delay: 0.8, duration: 0.6 }}
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  href={ctaHref}
+                <button
                   className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 hover:shadow-lg hover:shadow-blue-600/50"
                 >
                   {ctaText}
-                </Link>
+                </button>
               </motion.div>
             </motion.div>
           </motion.div>
