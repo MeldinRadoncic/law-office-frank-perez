@@ -22,14 +22,14 @@ export function HeroSection({
   ctaPhone,
   backgroundImage,
 }: HeroSectionProps) {
-  // Fast animations that play immediately on page load
+  // Super fast animations - appear immediately
   const heroContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
+        staggerChildren: 0.05,
+        delayChildren: 0.05,
       },
     },
   }
@@ -40,7 +40,7 @@ export function HeroSection({
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
