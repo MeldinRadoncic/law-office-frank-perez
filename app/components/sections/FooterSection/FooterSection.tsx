@@ -135,6 +135,21 @@ export function FooterSection({
             </span>
           </div>
         </div>
+
+        {/* Powered by Section */}
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+          <p className="text-sm text-gray-400">
+            Powered by{' '}
+            <a
+              href="https://www.aiwizardpro.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors font-semibold"
+            >
+              AI Wizard
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )
