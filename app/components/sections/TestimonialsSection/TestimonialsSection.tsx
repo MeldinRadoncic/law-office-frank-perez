@@ -84,9 +84,9 @@ export function TestimonialsSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header - Centered */}
+        {/* Header */}
         <motion.div
-          className="mb-16 md:mb-20 text-center"
+          className="mb-16 md:mb-20 text-center lg:text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
@@ -134,10 +134,10 @@ export function TestimonialsSection() {
         </div>
 
         {/* Navigation - Arrow Buttons */}
-        <div className="mt-12 flex items-center lg:items-start justify-center gap-6">
+        <div className="mt-12 flex items-center justify-center gap-6">
           <motion.button
             onClick={scrollPrev}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Previous testimonial"
@@ -147,7 +147,7 @@ export function TestimonialsSection() {
 
           <motion.button
             onClick={scrollNext}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Next testimonial"
@@ -157,7 +157,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Dots Pagination */}
-        <div className="mt-8 flex items-center lg:items-start justify-center gap-3">
+        <div className="mt-8 flex items-center justify-center gap-3">
           {testimonials.map((_, index) => (
             <motion.button
               key={index}

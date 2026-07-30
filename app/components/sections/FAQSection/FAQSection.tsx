@@ -20,8 +20,8 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - Centered */}
-        <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
+        {/* Section Header */}
+        <div className="mb-16 md:mb-20 text-center lg:text-left max-w-3xl lg:max-w-none">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
@@ -39,7 +39,7 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex flex-col items-center sm:items-center md:items-center justify-between hover:no-underline gap-4 text-center sm:text-center md:text-center lg:text-left"
+                className="w-full px-6 md:px-8 py-5 md:py-6 flex items-center justify-between hover:no-underline gap-4 text-center sm:text-center md:text-center lg:text-left"
               >
                 {/* Question */}
                 <h3 className="text-lg md:text-xl font-bold text-gray-900">
@@ -49,7 +49,7 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
                 {/* Toggle Icon */}
                 <div className="ml-4 flex-shrink-0">
                   <div
-                    className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center transform transition-transform duration-300 ${
+                    className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center transform transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   >
@@ -75,7 +75,7 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center lg:text-left">
           <p className="text-gray-700 mb-6 text-lg">
             Have more questions?
           </p>
