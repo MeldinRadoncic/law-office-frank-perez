@@ -22,25 +22,25 @@ export function HeroSection({
   ctaPhone,
   backgroundImage,
 }: HeroSectionProps) {
-  // Instant animations - appear RIGHT NOW
+  // Almost 1 second animations
   const heroContainerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
-        delayChildren: 0,
+        staggerChildren: 0.1,
+        delayChildren: 0.05,
       },
     },
   }
 
   const heroItemVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.6,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
@@ -71,18 +71,29 @@ export function HeroSection({
         transition={{ duration: 0.6 }}
       />
 
-      {/* LAYER 3: Content - VISIBLE INSTANTLY */}
-      <div className="relative z-20 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      {/* LAYER 3: Content - Fade in over 1 second */}
+      <motion.div
+        className="relative z-20 w-full min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+        initial="hidden"
+        animate="visible"
+        variants={heroContainerVariants}
+      >
         <div className="w-full max-w-4xl text-center py-16 sm:py-20">
           {/* Tagline Badge */}
-          <div className="mb-4 sm:mb-6 flex justify-center">
-            <span className="inline-block px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-900 text-xs sm:text-sm font-semibold whitespace-nowrap hover:scale-105 transition-transform">
+          <motion.div
+            className="mb-4 sm:mb-6 flex justify-center"
+            variants={heroItemVariants}
+          >
+            <motion.span
+              className="inline-block px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-900 text-xs sm:text-sm font-semibold whitespace-nowrap"
+              whileHover={{ scale: 1.05 }}
+            >
               {tagline}
-            </span>
-          </div>
+            </motion.span>
+          </motion.div>
 
           {/* Main Headline */}
-          <div>
+          <motion.div variants={heroItemVariants}>
             <Heading
               level="h1"
               size="5xl"
@@ -91,31 +102,45 @@ export function HeroSection({
             >
               {headline}
             </Heading>
-          </div>
+          </motion.div>
 
           {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 mx-auto leading-relaxed max-w-2xl">
+          <motion.p
+            className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8 mx-auto leading-relaxed max-w-2xl"
+            variants={heroItemVariants}
+          >
             {description}
-          </p>
+          </motion.p>
 
-          {/* CTA Buttons - NO ACTION - VISIBLE NOW */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap">
-            <div className="hover:scale-105 transition-transform">
+          {/* CTA Buttons - Fade in */}
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 flex-wrap"
+            variants={heroContainerVariants}
+          >
+            <motion.div
+              variants={heroItemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <button
                 className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:from-blue-700 hover:to-blue-800 hover:shadow-2xl hover:shadow-blue-600/50 text-center`}
               >
                 {ctaText}
               </button>
-            </div>
+            </motion.div>
 
-            <div className="hover:scale-105 transition-transform">
+            <motion.div
+              variants={heroItemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <button
                 className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-lg font-bold text-base sm:text-lg ${transitions.normal} hover:bg-blue-50 text-center`}
               >
                 {ctaPhone}
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Scroll Indicator */}
           <motion.div
@@ -137,7 +162,7 @@ export function HeroSection({
             </motion.div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
