@@ -74,7 +74,7 @@ export function RecognitionsSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Left: Recognition Timeline */}
           <motion.div
-            className="space-y-6 sm:text-center md:text-center"
+            className="space-y-6 text-center sm:text-center md:text-center"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
@@ -82,7 +82,7 @@ export function RecognitionsSection({
             {recognitions.map((recognition, index) => (
               <motion.div
                 key={index}
-                className="group relative flex gap-6 items-start p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-white border border-blue-100 hover:border-blue-400 hover:shadow-lg transition-all duration-500"
+                className="group relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-white border border-blue-100 hover:border-blue-400 hover:shadow-lg transition-all duration-500"
                 variants={itemVariants}
               >
                 {/* Timeline dot */}

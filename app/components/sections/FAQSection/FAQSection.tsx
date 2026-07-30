@@ -39,10 +39,10 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex flex-col sm:flex-row md:flex-row items-start sm:items-center md:items-center justify-between hover:no-underline gap-4"
+                className="w-full px-6 md:px-8 py-5 md:py-6 flex flex-col items-center sm:items-center md:items-center justify-between hover:no-underline gap-4 text-center sm:text-center md:text-center"
               >
                 {/* Question */}
-                <h3 className="text-lg md:text-xl font-bold text-gray-900 sm:text-center md:text-center">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900">
                   {faq.question}
                 </h3>
 

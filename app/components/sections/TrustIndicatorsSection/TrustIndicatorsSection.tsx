@@ -52,12 +52,12 @@ export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
               <div className="relative z-10">
                 {/* Statistic */}
                 <motion.div
-                  className="mb-4"
+                  className="mb-4 text-center sm:text-center md:text-center"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
                 >
-                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent sm:text-center md:text-center">
+                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
                     {stat.statistic}
                   </div>
                 </motion.div>
