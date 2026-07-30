@@ -193,6 +193,16 @@ export default function Home() {
         backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop&q=80"
       />
       <TrustIndicatorsSection stats={trustStats} />
+      <AboutSection
+        title="About Frank Perez"
+        foundersName="Frank Perez, Esq."
+        foundersTitle="Founder & Principal Attorney"
+        description="With over 40 years of experience, Frank Perez has defended high-profile international cases. His unique background as a former Dallas Police Officer (1982) and Assistant District Attorney gives him unparalleled insight into government prosecution strategies. He aggressively identifies weaknesses in government cases and fights to protect your constitutional rights."
+        image="/frank.png"
+        ctaText="Schedule Consultation"
+        ctaHref="tel:+12148289911"
+        backgroundColor="white"
+      />
       <StrategicApproachSection
         title="Our Approach"
         subtitle="Strategic Criminal Defense"
@@ -204,16 +214,6 @@ export default function Home() {
         title="Practice Areas"
         description="Specialized defense for complex federal and international criminal cases"
         backgroundColor="light"
-      />
-      <AboutSection
-        title="About Frank Perez"
-        foundersName="Frank Perez, Esq."
-        foundersTitle="Founder & Principal Attorney"
-        description="With over 40 years of experience, Frank Perez has defended high-profile international cases. His unique background as a former Dallas Police Officer (1982) and Assistant District Attorney gives him unparalleled insight into government prosecution strategies. He aggressively identifies weaknesses in government cases and fights to protect your constitutional rights."
-        image="/frank.png"
-        ctaText="Schedule Consultation"
-        ctaHref="tel:+12148289911"
-        backgroundColor="white"
       />
       <RecognitionsSection
         recognitions={recognitions}
