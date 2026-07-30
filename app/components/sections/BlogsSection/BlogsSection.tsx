@@ -130,8 +130,8 @@ export function BlogsSection({
                   </motion.div>
 
                   {/* Blog Content */}
-                  <div className="flex flex-col justify-center order-1 lg:order-2">
-                    <div className="mb-4 inline-block">
+                  <div className="flex flex-col justify-center order-1 lg:order-2 sm:text-center md:text-center">
+                    <div className="mb-4 sm:flex md:flex sm:justify-center md:justify-center">
                       <span className="text-sm md:text-base font-bold text-amber-600 uppercase tracking-widest">
                         {blog.category}
                       </span>
@@ -145,7 +145,7 @@ export function BlogsSection({
                       {blog.description}
                     </p>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row md:flex-row items-center sm:justify-center md:justify-center gap-4">
                       <span className="text-sm md:text-base text-gray-600 font-medium">
                         {blog.date}
                       </span>

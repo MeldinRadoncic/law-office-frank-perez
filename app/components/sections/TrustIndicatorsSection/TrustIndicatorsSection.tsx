@@ -57,14 +57,14 @@ export function TrustIndicatorsSection({ stats }: TrustIndicatorsSectionProps) {
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
                 >
-                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">
+                  <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent sm:text-center md:text-center">
                     {stat.statistic}
                   </div>
                 </motion.div>
 
                 {/* Description */}
                 <motion.p
-                  className="text-gray-300 text-lg font-medium group-hover:text-white transition-colors duration-300"
+                  className="text-gray-300 text-lg font-medium group-hover:text-white transition-colors duration-300 sm:text-center md:text-center"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: index * 0.1 + 0.4, duration: 0.6 }}

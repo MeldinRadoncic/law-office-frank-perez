@@ -74,7 +74,7 @@ export function RecognitionsSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Left: Recognition Timeline */}
           <motion.div
-            className="space-y-6"
+            className="space-y-6 sm:text-center md:text-center"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
@@ -111,7 +111,7 @@ export function RecognitionsSection({
 
           {/* Right: Image */}
           <motion.div
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center"
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ delay: 0.3, duration: 0.8 }}

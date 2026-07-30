@@ -42,7 +42,7 @@ export function AboutSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Image */}
           <motion.div
-            className="flex justify-center lg:justify-start"
+            className="flex justify-center"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={slideInLeftVariants}
@@ -79,7 +79,7 @@ export function AboutSection({
 
           {/* Right: Content */}
           <motion.div
-            className="flex flex-col justify-center"
+            className="flex flex-col justify-center sm:text-center md:text-center"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={slideInRightVariants}
@@ -150,7 +150,7 @@ export function AboutSection({
                   subtitle: 'Proven track record of successful cases',
                 },
               ].map((credential, index) => (
-                <motion.div key={index} className="flex items-start gap-3" variants={itemVariants}>
+                <motion.div key={index} className="flex items-start gap-3 sm:justify-center md:justify-center" variants={itemVariants}>
                   <span className="text-2xl">{credential.icon}</span>
                   <div>
                     <p className="font-semibold text-gray-900">{credential.title}</p>

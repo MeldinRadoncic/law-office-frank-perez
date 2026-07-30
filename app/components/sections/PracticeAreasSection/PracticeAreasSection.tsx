@@ -135,10 +135,10 @@ export function PracticeAreasSection({
               whileHover={{ translateY: -8 }}
             >
 
-              <div className="relative z-10">
+              <div className="relative z-10 sm:text-center md:text-center">
                 {/* Icon Badge */}
                 <motion.div
-                  className="w-16 h-16 rounded-2xl bg-white/50 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/80 transition-all duration-300"
+                  className="w-16 h-16 rounded-2xl bg-white/50 backdrop-blur-sm flex items-center justify-center mb-6 group-hover:bg-white/80 transition-all duration-300 sm:mx-auto md:mx-auto"
                   whileHover={{ scale: 1.15, rotate: 10 }}
                   transition={{ type: 'spring', stiffness: 200 }}
                 >
@@ -157,7 +157,7 @@ export function PracticeAreasSection({
 
                 {/* CTA Link */}
                 <motion.div
-                  className="flex items-center gap-2 text-blue-600 font-semibold"
+                  className="flex items-center gap-2 text-blue-600 font-semibold sm:justify-center md:justify-center"
                   whileHover={{ gap: 12 }}
                 >
                   <span>Learn More</span>

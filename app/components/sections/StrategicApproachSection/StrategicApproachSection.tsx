@@ -76,12 +76,12 @@ export function StrategicApproachSection({
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
         {/* Header */}
         <motion.div
-          className="mb-20 max-w-3xl"
+          className="mb-20 max-w-3xl sm:mx-auto md:mx-auto sm:text-center md:text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-6 inline-block">
+          <div className="mb-6 sm:flex md:flex sm:justify-center md:justify-center">
             <span className="text-sm md:text-base font-bold text-amber-600 uppercase tracking-widest">
               {subtitle}
             </span>
@@ -145,10 +145,10 @@ export function StrategicApproachSection({
                 >
 
                   {/* Content */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 sm:text-center md:text-center">
                     {/* Icon */}
                     <motion.div
-                      className="text-6xl mb-4 inline-block"
+                      className="text-6xl mb-4 sm:flex md:flex sm:justify-center md:justify-center"
                       animate={activeIndex === index ? { scale: 1.1, rotate: 12 } : { scale: 1, rotate: 0 }}
                       transition={{ type: 'spring', stiffness: 200 }}
                     >
