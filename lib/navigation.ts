@@ -10,18 +10,18 @@ export const getNavLinks = (): NavLink[] => [
   },
   {
     label: 'Practice Areas',
-    href: '#practice-areas',
+    href: '#',
   },
   {
     label: 'About',
-    href: '#about',
+    href: '#',
   },
   {
     label: 'FAQ',
-    href: '#faq',
+    href: '#',
   },
   {
     label: 'Contact',
-    href: '#contact',
+    href: '#',
   },
 ]
