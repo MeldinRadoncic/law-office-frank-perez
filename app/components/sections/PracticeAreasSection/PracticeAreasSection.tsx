@@ -83,21 +83,21 @@ export function PracticeAreasSection({
       />
 
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
-        {/* Section Header - Centered */}
+        {/* Section Header */}
         <motion.div
-          className="mb-16 md:mb-20 lg:mb-24 text-center"
+          className="mb-16 md:mb-20 lg:mb-24 text-center lg:text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="max-w-3xl mx-auto">
-            <div className="mb-6 flex justify-center">
+          <div className="max-w-3xl lg:max-w-none">
+            <div className="mb-6 flex justify-center lg:justify-start">
               <span className="text-sm md:text-base font-bold text-amber-500 uppercase tracking-widest">
                 Our Services
               </span>
             </div>
             <motion.div
-              className="mt-3 h-1.5 w-20 bg-gradient-to-r from-amber-600 via-blue-500 to-amber-600 rounded-full mx-auto mb-6"
+              className="mt-3 h-1.5 w-20 bg-gradient-to-r from-amber-600 via-blue-500 to-amber-600 rounded-full mx-auto lg:mx-0 mb-6"
               initial={{ width: 0, opacity: 0 }}
               animate={inView ? { width: 80, opacity: 1 } : { width: 0, opacity: 0 }}
               transition={{ delay: 0.2, duration: 1 }}

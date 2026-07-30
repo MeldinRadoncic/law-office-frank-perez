@@ -79,7 +79,7 @@ export function AboutSection({
 
           {/* Right: Content */}
           <motion.div
-            className="flex flex-col justify-center text-center sm:text-center md:text-center"
+            className="flex flex-col justify-center text-center sm:text-center md:text-center lg:text-left"
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={slideInRightVariants}
@@ -150,7 +150,7 @@ export function AboutSection({
                   subtitle: 'Proven track record of successful cases',
                 },
               ].map((credential, index) => (
-                <motion.div key={index} className="flex items-start gap-3 justify-center sm:justify-center md:justify-center" variants={itemVariants}>
+                <motion.div key={index} className="flex items-start gap-3 justify-center sm:justify-center md:justify-center lg:justify-start" variants={itemVariants}>
                   <span className="text-2xl">{credential.icon}</span>
                   <div>
                     <p className="font-semibold text-gray-900">{credential.title}</p>
@@ -165,7 +165,7 @@ export function AboutSection({
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ delay: 0.8, duration: 0.6 }}
-              className="flex justify-center"
+              className="flex justify-center lg:justify-start"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <button

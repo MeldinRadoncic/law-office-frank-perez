@@ -118,7 +118,7 @@ export function BlogsSection({
                 >
                   {/* Blog Image */}
                   <motion.div
-                    className="flex justify-center lg:justify-start order-2 lg:order-1"
+                    className="flex justify-center lg:justify-start lg:justify-start order-2 lg:order-1"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: 'spring' as const, stiffness: 200 }}
                   >
@@ -130,8 +130,8 @@ export function BlogsSection({
                   </motion.div>
 
                   {/* Blog Content */}
-                  <div className="flex flex-col justify-center order-1 lg:order-2 text-center sm:text-center md:text-center">
-                    <div className="mb-4 flex justify-center">
+                  <div className="flex flex-col justify-center order-1 lg:order-2 text-center sm:text-center md:text-center lg:text-left">
+                    <div className="mb-4 flex justify-center lg:justify-start">
                       <span className="text-sm md:text-base font-bold text-amber-600 uppercase tracking-widest">
                         {blog.category}
                       </span>
@@ -151,7 +151,7 @@ export function BlogsSection({
                       </span>
                       <a
                         href="#"
-                        className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center gap-2"
+                        className="text-blue-600 font-bold hover:text-blue-700 transition-colors flex items-center lg:items-start gap-2"
                       >
                         Read More →
                       </a>
@@ -164,10 +164,10 @@ export function BlogsSection({
         </div>
 
         {/* Navigation Arrows */}
-        <div className="mt-12 flex items-center justify-center gap-6">
+        <div className="mt-12 flex items-center lg:items-start justify-center gap-6">
           <motion.button
             onClick={scrollPrev}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Previous article"
@@ -177,7 +177,7 @@ export function BlogsSection({
 
           <motion.button
             onClick={scrollNext}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Next article"

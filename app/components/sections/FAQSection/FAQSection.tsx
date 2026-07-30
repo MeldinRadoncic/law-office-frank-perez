@@ -39,7 +39,7 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 md:px-8 py-5 md:py-6 flex flex-col items-center sm:items-center md:items-center justify-between hover:no-underline gap-4 text-center sm:text-center md:text-center"
+                className="w-full px-6 md:px-8 py-5 md:py-6 flex flex-col items-center sm:items-center md:items-center justify-between hover:no-underline gap-4 text-center sm:text-center md:text-center lg:text-left"
               >
                 {/* Question */}
                 <h3 className="text-lg md:text-xl font-bold text-gray-900">
@@ -49,7 +49,7 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
                 {/* Toggle Icon */}
                 <div className="ml-4 flex-shrink-0">
                   <div
-                    className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center transform transition-transform duration-300 ${
+                    className={`w-6 h-6 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center transform transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   >

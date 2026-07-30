@@ -55,9 +55,9 @@ export function RecognitionsSection({
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header - Centered */}
+        {/* Header */}
         <motion.div
-          className="mb-16 md:mb-20 text-center"
+          className="mb-16 md:mb-20 text-center lg:text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
@@ -74,7 +74,7 @@ export function RecognitionsSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Left: Recognition Timeline */}
           <motion.div
-            className="space-y-6 text-center sm:text-center md:text-center"
+            className="space-y-6 text-center sm:text-center md:text-center lg:text-left"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
@@ -82,7 +82,7 @@ export function RecognitionsSection({
             {recognitions.map((recognition, index) => (
               <motion.div
                 key={index}
-                className="group relative flex flex-col items-center gap-6 p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-white border border-blue-100 hover:border-blue-400 hover:shadow-lg transition-all duration-500"
+                className="group relative flex flex-col items-center lg:items-start gap-6 p-8 rounded-2xl bg-gradient-to-r from-blue-50 to-white border border-blue-100 hover:border-blue-400 hover:shadow-lg transition-all duration-500"
                 variants={itemVariants}
               >
                 {/* Timeline dot */}

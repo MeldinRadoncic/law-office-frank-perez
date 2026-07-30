@@ -41,8 +41,8 @@ export function FooterSection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
-          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center">
-            <div className="flex items-center gap-3 mb-6 sm:justify-center md:justify-center">
+          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center lg:text-left">
+            <div className="flex items-center lg:items-start gap-3 mb-6 sm:justify-center md:justify-center">
               {logo && <span className="text-3xl">{logo}</span>}
               <div>
                 <p className="text-sm text-blue-400 font-semibold">LAW OFFICE</p>
@@ -55,7 +55,7 @@ export function FooterSection({
           </div>
 
           {/* Contact Information */}
-          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center">
+          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6">Contact</h4>
             <div className="space-y-4">
               <div>
@@ -84,7 +84,7 @@ export function FooterSection({
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center">
+          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6">Quick Links</h4>
             <div className="space-y-3">
               {footerLinks.map((link) => (
@@ -100,16 +100,16 @@ export function FooterSection({
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center">
+          <div className="flex flex-col items-center sm:items-center md:items-center text-center sm:text-center md:text-center lg:text-left">
             <h4 className="text-white font-bold text-lg mb-6">Follow Us</h4>
-            <div className="flex items-center gap-4 sm:justify-center md:justify-center">
+            <div className="flex items-center lg:items-start gap-4 sm:justify-center md:justify-center">
               {Object.entries(socialLinks).map(([platform, url]) => (
                 <a
                   key={platform}
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/50 flex items-center justify-center text-blue-400 hover:bg-blue-600/40 hover:text-blue-300 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/50 flex items-center lg:items-start justify-center text-blue-400 hover:bg-blue-600/40 hover:text-blue-300 transition-all duration-300"
                   title={platform}
                 >
                   <span className="text-lg">
@@ -129,7 +129,7 @@ export function FooterSection({
       <div className="border-t border-gray-800 px-4 sm:px-6 lg:px-8 py-8">
         <div className="max-w-7xl mx-auto flex flex-col items-center md:flex-row md:items-center justify-center sm:justify-center md:justify-between gap-4 text-sm text-gray-400 text-center sm:text-center md:text-left">
           <p>{copyright}</p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center lg:items-start gap-6">
             <span className="text-gray-400 cursor-default">
               Privacy Policy
             </span>

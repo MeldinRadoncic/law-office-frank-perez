@@ -76,12 +76,12 @@ export function StrategicApproachSection({
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
         {/* Header */}
         <motion.div
-          className="mb-20 max-w-3xl mx-auto text-center sm:text-center md:text-center lg:text-center"
+          className="mb-20 max-w-3xl text-center sm:text-center md:text-center lg:text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mb-6 flex justify-center">
+          <div className="mb-6 flex justify-center lg:justify-start">
             <span className="text-sm md:text-base font-bold text-amber-600 uppercase tracking-widest">
               {subtitle}
             </span>
@@ -93,7 +93,7 @@ export function StrategicApproachSection({
             />
           </div>
 
-          <Heading level="h2" size="4xl" color="primary" className="mb-6 text-4xl md:text-5xl lg:text-6xl text-center">
+          <Heading level="h2" size="4xl" color="primary" className="mb-6 text-4xl md:text-5xl lg:text-6xl text-center lg:text-left">
             {title}
           </Heading>
 

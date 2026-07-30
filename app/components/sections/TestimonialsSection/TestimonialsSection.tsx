@@ -108,14 +108,14 @@ export function TestimonialsSection() {
                 className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
               >
                 <motion.div
-                  className="group h-full p-8 md:p-10 rounded-2xl bg-gray-900/50 border-2 border-gray-700 hover:border-blue-500/50 shadow-md hover:shadow-xl transition-all duration-500 backdrop-blur-sm text-center sm:text-center md:text-center"
+                  className="group h-full p-8 md:p-10 rounded-2xl bg-gray-900/50 border-2 border-gray-700 hover:border-blue-500/50 shadow-md hover:shadow-xl transition-all duration-500 backdrop-blur-sm text-center sm:text-center md:text-center lg:text-left"
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
                   whileHover={{ translateY: -8 }}
                 >
                   {/* Stars */}
-                  <div className="mb-6 text-3xl flex justify-center">★★★★★</div>
+                  <div className="mb-6 text-3xl flex justify-center lg:justify-start">★★★★★</div>
 
                   {/* Quote */}
                   <blockquote className="text-gray-200 text-lg leading-relaxed mb-6 italic">
@@ -134,10 +134,10 @@ export function TestimonialsSection() {
         </div>
 
         {/* Navigation - Arrow Buttons */}
-        <div className="mt-12 flex items-center justify-center gap-6">
+        <div className="mt-12 flex items-center lg:items-start justify-center gap-6">
           <motion.button
             onClick={scrollPrev}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Previous testimonial"
@@ -147,7 +147,7 @@ export function TestimonialsSection() {
 
           <motion.button
             onClick={scrollNext}
-            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center lg:items-start justify-center hover:bg-blue-700 transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Next testimonial"
@@ -157,7 +157,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Dots Pagination */}
-        <div className="mt-8 flex items-center justify-center gap-3">
+        <div className="mt-8 flex items-center lg:items-start justify-center gap-3">
           {testimonials.map((_, index) => (
             <motion.button
               key={index}
