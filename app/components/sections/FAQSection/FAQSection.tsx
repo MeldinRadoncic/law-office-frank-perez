@@ -19,9 +19,9 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
       {/* Decorative background */}
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -translate-y-1/2" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-16 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header - Centered */}
+        <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
@@ -30,8 +30,8 @@ export function FAQSection({ faqs = [] }: FAQSectionProps) {
           </p>
         </div>
 
-        {/* FAQ Accordion */}
-        <div className="space-y-4">
+        {/* FAQ Grid - 2 columns on lg */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {faqs.map((faq, index) => (
             <div
               key={index}
