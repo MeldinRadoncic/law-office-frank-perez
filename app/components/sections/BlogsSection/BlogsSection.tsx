@@ -128,14 +128,11 @@ export function BlogsSection({
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: 'spring', stiffness: 200 }}
                   >
-                    <div className="relative group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl transform -rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-xl" />
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        className="relative rounded-2xl shadow-2xl object-cover w-full h-96 max-w-md"
-                      />
-                    </div>
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="rounded-2xl shadow-2xl object-cover w-full h-96 max-w-md"
+                    />
                   </motion.div>
 
                   {/* Blog Content */}
