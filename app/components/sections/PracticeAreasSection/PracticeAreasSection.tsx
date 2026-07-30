@@ -130,18 +130,10 @@ export function PracticeAreasSection({
             <motion.a
               key={index}
               href={area.link}
-              className={`group relative p-8 md:p-10 rounded-2xl bg-gradient-to-br border-2 shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer ${
-                cardColors[index % cardColors.length]
-              }`}
+              className="group relative p-8 md:p-10 rounded-2xl bg-white border-2 border-gray-200 shadow-md hover:shadow-2xl hover:border-amber-300/50 transition-all duration-500 overflow-hidden cursor-pointer"
               variants={cardVariants}
               whileHover={{ translateY: -8 }}
             >
-              {/* Card background glow on hover */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 0.05 }}
-              />
 
               <div className="relative z-10">
                 {/* Icon Badge */}
