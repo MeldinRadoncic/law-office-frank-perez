@@ -55,10 +55,11 @@ export function TestimonialsSection() {
     {
       slidesToScroll: 1,
       loop: true,
+      align: 'start',
       breakpoints: {
         '(max-width: 640px)': { slides: { perView: 1 } },
-        '(min-width: 641px) and (max-width: 1023px)': { slides: { perView: 1 } },
-        '(min-width: 1024px)': { slides: { perView: 1 } },
+        '(min-width: 641px) and (max-width: 1023px)': { slides: { perView: 2 } },
+        '(min-width: 1024px)': { slides: { perView: 3 } },
       },
     },
     [Autoplay({ delay: 5000, stopOnInteraction: false })]
@@ -91,7 +92,7 @@ export function TestimonialsSection() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-[0_0_100%] min-w-0"
+                className="flex-[0_0_100%] sm:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
               >
                 <motion.div
                   className="group h-full p-8 md:p-10 rounded-2xl bg-white border-2 border-gray-200 hover:border-blue-400/50 shadow-md hover:shadow-xl transition-all duration-500"
