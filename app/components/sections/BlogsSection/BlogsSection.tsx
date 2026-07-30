@@ -69,7 +69,7 @@ export function BlogsSection({
     triggerOnce: true,
   })
 
-  const [emblaRef, emblaApi] = EmblaCarousel(
+  const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       slidesToScroll: 1,
       loop: true,
