@@ -184,13 +184,13 @@ export default function Home() {
         phone="(214) 828-9911"
       />
       <HeroSection
-        headline="Your Trusted Advocate"
-        tagline="International Criminal Defense"
-        description="Expert federal defense for complex international cases. 40+ years of experience protecting your rights."
-        ctaText="Call Now"
+        headline="Your Trusted Advocate in Federal Criminal Defense"
+        tagline="40+ Years of Experience"
+        description="Expert representation in international criminal defense, drug trafficking, OFAC sanctions, and extradition cases. Frank Perez combines former law enforcement and prosecutor experience to aggressively protect your rights."
+        ctaText="Schedule Consultation"
         ctaHref="tel:+12148289911"
         ctaPhone="(214) 828-9911"
-        backgroundImage="https://images.unsplash.com/photo-1589391886645-d51941bbb38f?w=1600&h=900&fit=crop"
+        backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop&q=80"
       />
       <TrustIndicatorsSection stats={trustStats} />
       <StrategicApproachSection
