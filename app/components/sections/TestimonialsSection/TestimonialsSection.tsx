@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { motion } from 'framer-motion'
@@ -45,6 +46,7 @@ export function TestimonialsSection() {
     },
   ]
 
+  const [selectedIndex, setSelectedIndex] = useState(0)
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -52,20 +54,26 @@ export function TestimonialsSection() {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      slidesToScroll: 1,
       loop: true,
       align: 'start',
-      breakpoints: {
-        '(max-width: 640px)': { slides: { perView: 1 } },
-        '(min-width: 641px) and (max-width: 1023px)': { slides: { perView: 2 } },
-        '(min-width: 1024px)': { slides: { perView: 3 } },
-      },
     },
     [Autoplay({ delay: 5000, stopOnInteraction: true })]
   )
 
+  useEffect(() => {
+    if (!emblaApi) return
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedIndex() % testimonials.length)
+    }
+
+    emblaApi.on('select', onSelect)
+    return () => emblaApi.off('select', onSelect)
+  }, [emblaApi, testimonials.length])
+
   const scrollPrev = () => emblaApi?.scrollPrev()
   const scrollNext = () => emblaApi?.scrollNext()
+  const scrollTo = (index: number) => emblaApi?.scrollTo(index)
 
   return (
     <section ref={ref} className="w-full py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden">
@@ -143,6 +151,23 @@ export function TestimonialsSection() {
           >
             →
           </motion.button>
+        </div>
+
+        {/* Dots Pagination */}
+        <div className="mt-8 flex items-center justify-center gap-3">
+          {testimonials.map((_, index) => (
+            <motion.button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                selectedIndex === index
+                  ? 'bg-blue-600 w-8'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              whileHover={{ scale: 1.2 }}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
