@@ -71,18 +71,7 @@ export function StrategicApproachSection({
   }
 
   return (
-    <section ref={ref} className="w-full py-20 md:py-32 bg-gradient-to-b from-white via-blue-50/30 to-white relative overflow-hidden">
-      {/* Animated decorative elements */}
-      <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-amber-400/5 to-blue-400/5 rounded-full blur-3xl"
-        animate={{ y: [0, 30, 0] }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-blue-400/5 to-amber-400/5 rounded-full blur-3xl"
-        animate={{ y: [0, -30, 0] }}
-        transition={{ duration: 10, repeat: Infinity }}
-      />
+    <section ref={ref} className="w-full py-20 md:py-32 bg-white relative overflow-hidden">
 
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
         {/* Header */}
@@ -150,20 +139,10 @@ export function StrategicApproachSection({
                 <motion.div
                   className={`relative group rounded-2xl p-8 pt-16 border-2 transition-all duration-300 cursor-pointer overflow-hidden h-full ${
                     activeIndex === index
-                      ? 'border-amber-500 bg-gradient-to-br from-amber-50 to-blue-50 shadow-2xl shadow-amber-500/20'
-                      : 'border-gray-200 bg-white hover:border-amber-300 shadow-md hover:shadow-xl'
+                      ? 'border-blue-900/40 bg-white shadow-2xl shadow-blue-900/15'
+                      : 'border-gray-200 bg-white hover:border-blue-400/30 shadow-md hover:shadow-lg'
                   }`}
                 >
-                  {/* Animated background on active */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-amber-600/0 to-blue-600/0"
-                    animate={
-                      activeIndex === index
-                        ? { opacity: [0.05, 0.1, 0.05] }
-                        : { opacity: 0 }
-                    }
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
 
                   {/* Content */}
                   <div className="relative z-10">
