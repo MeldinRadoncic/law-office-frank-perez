@@ -76,7 +76,7 @@ export function StrategicApproachSection({
       <div className={`relative z-10 ${responsive.containerMaxWidth} px-4 sm:px-6 lg:px-8`}>
         {/* Header */}
         <motion.div
-          className="mb-20 max-w-3xl mx-auto text-center sm:text-center md:text-center"
+          className="mb-20 max-w-3xl mx-auto text-center sm:text-center md:text-center lg:text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
