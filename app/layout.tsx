@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import Script from "next/script";
 import { createMetadata, organizationStructuredData } from "@/lib/seo";
+import { PreviewLayer } from "@/app/components/PreviewLayer";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -35,7 +36,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <PreviewLayer />
+        {children}
+      </body>
     </html>
   );
 }
